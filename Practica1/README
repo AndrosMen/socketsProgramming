@@ -1,0 +1,24 @@
+
+Install and Remove:
+To Compile the program just use the Makefile with the command
+	make server
+And to delete the program use
+	make clean
+
+
+Usage:
+To use the program just run the server.o, remember that under linux, normal user accounts don't have admin status, so you'll need to run it with sudo since changing the port to listening mode requires admin privileges.
+
+By default the program will run on 0.0.0.0 using port 80. If the user desires another IP, it can be changed by modifing the main.c file.
+
+The only avaliable route name to download a file is 0.0.0.0/download.  
+All other route names will be redirected to the 404 page.
+
+
+IMPORTANT
+To achieve the expected results, you need to change first 3 macros in the server.c file beginning on line 14. 
+	. The OUTNAME is the name that the web browser will give to the downloaded file, be specially careful with the file extension.
+	. The FILEPATH is the full path where the file to be uploated by the server is located.
+	. The NOTFOUND is the html file that will be displayed whenever the user, one is provided with the project but needs the path where you saved it.
+
+
