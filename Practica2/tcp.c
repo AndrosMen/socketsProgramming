@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 #include "debug.h"
+#include "tcp.h"
 
 int getNewTCPSocket(int addrType)
 {
@@ -81,7 +82,7 @@ int newTCPServerSocket4(const char *ip, const u_short port, const int maxClients
         return -1;
     }
 
-    debug(4,"Socket on %s:%u created",ip,port);
+    //debug(4,"Socket on %s:%u created",ip,port);
 
     return socketFD;
 }
@@ -89,7 +90,7 @@ int newTCPServerSocket4(const char *ip, const u_short port, const int maxClients
 void closeTCPSocket(const int socketFD) 
 {
     close(socketFD);
-    debug(4,"Socket(%i) closed",socketFD);
+    //debug(4,"Socket(%i) closed",socketFD);
     return;
 }
 
@@ -147,7 +148,7 @@ int newTCPClientSocket4(const char *ip, const u_short port)
         return -1;
     }
 
-    debug(3,"Connected to %s:%i",ip,port);
+  //  debug(3,"Connected to %s:%i",ip,port);
 
     return clientSocket;
 }
