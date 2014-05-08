@@ -1,3 +1,4 @@
+
 #include <sys/types.h>
 #include <strings.h>
 #include <stdio.h>
@@ -247,6 +248,10 @@ int validateCommands(const int clientSocket);
 		doget();
 	}
 	else if(strcmp(token,"GETFILEPART")==0)
+	{
+		listFiles();
+	}
+	else if(strcmp(token,"GETFILESIZE")==0)
 	{
 		listFiles();
 	}

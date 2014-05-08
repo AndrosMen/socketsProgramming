@@ -1,5 +1,6 @@
 #ifndef TCP_H
 #define TCP_H
+#include <sys/types.h>
 
 int newTCPServerSocket4(const char *ip, const u_short port, const int maxClients);
 void closeTCPSocket(const int socketFD);
