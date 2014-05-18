@@ -1,0 +1,9 @@
+#Comando para sacar el certificado y la llave
+
+openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 1000
+
+
+# Para compilar
+
+gcc -lcrypto -lssl sslclient.c -o sslclient
+gcc -lcrypto -lssl sslserver.c -o sslserver
